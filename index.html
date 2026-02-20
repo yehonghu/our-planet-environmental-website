@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Planet — Environmental Protection & Climate Change</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+                </svg>
+                Our Planet
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="issues.html" class="nav-link">Issues</a></li>
+                <li><a href="organizations.html" class="nav-link">Organizations</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+            </ul>
+            <button class="nav-cta" onclick="window.location.href='organizations.html'">Take Action</button>
+            <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="issues.html">Issues</a></li>
+            <li><a href="organizations.html">Organizations</a></li>
+            <li><a href="resources.html">Resources</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="images/hero-bg.png" alt="Natural landscape" class="hero-img">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <p class="hero-eyebrow">Environmental Protection & Climate Change</p>
+            <h1 class="hero-title">Our planet<br>needs us now.</h1>
+            <p class="hero-subtitle">Explore the most pressing environmental challenges of our time and discover the organizations working to create a sustainable future for all.</p>
+            <div class="hero-actions">
+                <a href="issues.html" class="btn btn-primary">Explore the Issues</a>
+                <a href="organizations.html" class="btn btn-ghost">View Organizations</a>
+            </div>
+        </div>
+        <div class="hero-scroll-hint">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item" data-animate>
+                    <span class="stat-number">2,000</span>
+                    <span class="stat-unit">trucks/day</span>
+                    <p class="stat-desc">Plastic dumped into oceans, rivers, and lakes every single day</p>
+                </div>
+                <div class="stat-item" data-animate>
+                    <span class="stat-number">1.5°C</span>
+                    <span class="stat-unit">critical threshold</span>
+                    <p class="stat-desc">Global temperature rise limit to prevent catastrophic climate impacts</p>
+                </div>
+                <div class="stat-item" data-animate>
+                    <span class="stat-number">1M+</span>
+                    <span class="stat-unit">species at risk</span>
+                    <p class="stat-desc">Plant and animal species threatened with extinction due to human activity</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Cards Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-eyebrow">Key Topics</p>
+                <h2 class="section-title">The challenges we face</h2>
+                <p class="section-subtitle">Understanding the scale and interconnectedness of today's environmental crises is the first step toward meaningful action.</p>
+            </div>
+            <div class="features-grid">
+                <a href="issues.html#plastic" class="feature-card feature-card--large">
+                    <div class="feature-card-bg" style="background: linear-gradient(135deg, #1a3a2a 0%, #0d4f3c 100%);">
+                        <div class="feature-card-pattern ocean-pattern"></div>
+                    </div>
+                    <div class="feature-card-content">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/>
+                                <path d="M3 12h4m10 0h4M12 3v4m0 10v4"/>
+                            </svg>
+                        </div>
+                        <p class="feature-tag">Plastic Pollution</p>
+                        <h3>Oceans under siege</h3>
+                        <p>Every year, 8 million metric tons of plastic enter our oceans, threatening marine ecosystems and human health.</p>
+                        <span class="feature-link">Learn more →</span>
+                    </div>
+                </a>
+                <a href="issues.html#climate" class="feature-card">
+                    <div class="feature-card-bg" style="background: linear-gradient(135deg, #1c2e4a 0%, #0a1628 100%);">
+                        <div class="feature-card-pattern sky-pattern"></div>
+                    </div>
+                    <div class="feature-card-content">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 3v1m0 16v1M4.22 4.22l.7.7m12.16 12.16.7.7M1 12h1m20 0h1M4.22 19.78l.7-.7M18.36 5.64l.7-.7"/>
+                                <circle cx="12" cy="12" r="4"/>
+                            </svg>
+                        </div>
+                        <p class="feature-tag">Climate Change</p>
+                        <h3>A warming world</h3>
+                        <p>Rising temperatures are reshaping our planet's climate systems, causing extreme weather and sea-level rise.</p>
+                        <span class="feature-link">Learn more →</span>
+                    </div>
+                </a>
+                <a href="issues.html#biodiversity" class="feature-card">
+                    <div class="feature-card-bg" style="background: linear-gradient(135deg, #2a1a0e 0%, #4a2c0a 100%);">
+                        <div class="feature-card-pattern forest-pattern"></div>
+                    </div>
+                    <div class="feature-card-content">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 22V12M12 12C12 7 7 3 2 3c0 5 4 9 10 9M12 12c0-5 5-9 10-9-1 5-5 9-10 9"/>
+                            </svg>
+                        </div>
+                        <p class="feature-tag">Biodiversity</p>
+                        <h3>Life on Earth</h3>
+                        <p>Habitat destruction and climate change are driving the sixth mass extinction in Earth's history.</p>
+                        <span class="feature-link">Learn more →</span>
+                    </div>
+                </a>
+                <a href="issues.html#gender" class="feature-card">
+                    <div class="feature-card-bg" style="background: linear-gradient(135deg, #2a1a3e 0%, #1a0a2e 100%);">
+                        <div class="feature-card-pattern purple-pattern"></div>
+                    </div>
+                    <div class="feature-card-content">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="8" r="4"/>
+                                <path d="M6 20v-2a6 6 0 0 1 12 0v2"/>
+                            </svg>
+                        </div>
+                        <p class="feature-tag">Gender & Environment</p>
+                        <h3>Unequal burden</h3>
+                        <p>Women and girls disproportionately bear the impacts of climate change and environmental degradation.</p>
+                        <span class="feature-link">Learn more →</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nature Image Section -->
+    <section class="nature-section">
+        <div class="nature-image-wrap">
+            <img src="images/nature-forest.avif" alt="Pristine forest landscape" class="nature-img">
+            <div class="nature-overlay">
+                <div class="nature-quote">
+                    <blockquote>"The Earth does not belong to us. We belong to the Earth."</blockquote>
+                    <cite>— Chief Seattle</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organizations Preview -->
+    <section class="orgs-preview-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-eyebrow">Global Partners</p>
+                <h2 class="section-title">Organizations making a difference</h2>
+                <p class="section-subtitle">These leading institutions are at the forefront of environmental protection and climate action worldwide.</p>
+            </div>
+            <div class="orgs-grid">
+                <a href="https://asez.org" target="_blank" class="org-card">
+                    <div class="org-logo-wrap">
+                        <img src="images/asez.jpeg" alt="ASEZ" class="org-logo">
+                    </div>
+                    <div class="org-info">
+                        <h4>ASEZ</h4>
+                        <p>International volunteer organization focused on environmental campaigns</p>
+                    </div>
+                    <span class="org-arrow">↗</span>
+                </a>
+                <a href="https://www.iucn.org" target="_blank" class="org-card">
+                    <div class="org-logo-wrap">
+                        <img src="images/iucn.jpeg" alt="IUCN" class="org-logo">
+                    </div>
+                    <div class="org-info">
+                        <h4>IUCN</h4>
+                        <p>World's largest and most diverse environmental network</p>
+                    </div>
+                    <span class="org-arrow">↗</span>
+                </a>
+                <a href="https://www.international.gc.ca/" target="_blank" class="org-card">
+                    <div class="org-logo-wrap">
+                        <img src="images/global-affairs.jpeg" alt="Global Affairs Canada" class="org-logo">
+                    </div>
+                    <div class="org-info">
+                        <h4>Global Affairs Canada</h4>
+                        <p>Canada's international climate finance and environmental initiatives</p>
+                    </div>
+                    <span class="org-arrow">↗</span>
+                </a>
+                <a href="https://climate.nasa.gov" target="_blank" class="org-card">
+                    <div class="org-logo-wrap org-logo-wrap--dark">
+                        <span class="org-logo-text">NASA</span>
+                    </div>
+                    <div class="org-info">
+                        <h4>NASA Climate</h4>
+                        <p>Leading climate research and Earth observation science</p>
+                    </div>
+                    <span class="org-arrow">↗</span>
+                </a>
+                <a href="https://davidsuzuki.org" target="_blank" class="org-card">
+                    <div class="org-logo-wrap">
+                        <img src="images/david-suzuki.png" alt="David Suzuki Foundation" class="org-logo">
+                    </div>
+                    <div class="org-info">
+                        <h4>David Suzuki Foundation</h4>
+                        <p>Canadian environmental organization promoting sustainable futures</p>
+                    </div>
+                    <span class="org-arrow">↗</span>
+                </a>
+                <a href="https://www.unep.org/" target="_blank" class="org-card">
+                    <div class="org-logo-wrap">
+                        <img src="images/unep.png" alt="UNEP" class="org-logo">
+                    </div>
+                    <div class="org-info">
+                        <h4>UNEP</h4>
+                        <p>United Nations Environment Programme — global environmental authority</p>
+                    </div>
+                    <span class="org-arrow">↗</span>
+                </a>
+            </div>
+            <div class="section-cta">
+                <a href="organizations.html" class="btn btn-secondary">View All Organizations</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-inner">
+                <h2>Every action counts.</h2>
+                <p>The decisions we make today will determine the world our children inherit tomorrow. Learn more about how you can contribute to a sustainable future.</p>
+                <div class="cta-actions">
+                    <a href="resources.html" class="btn btn-primary">Explore Resources</a>
+                    <a href="organizations.html" class="btn btn-outline-white">Get Involved</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">Our Planet</a>
+                    <p>A curated resource on environmental protection and climate change, created for COMP-213 Web Interface Design.</p>
+                </div>
+                <div class="footer-links-group">
+                    <h5>Explore</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="issues.html">Issues</a></li>
+                        <li><a href="organizations.html">Organizations</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h5>Organizations</h5>
+                    <ul>
+                        <li><a href="https://asez.org" target="_blank">ASEZ</a></li>
+                        <li><a href="https://www.iucn.org" target="_blank">IUCN</a></li>
+                        <li><a href="https://climate.nasa.gov" target="_blank">NASA Climate</a></li>
+                        <li><a href="https://www.unep.org/" target="_blank">UNEP</a></li>
+                        <li><a href="https://davidsuzuki.org" target="_blank">David Suzuki Foundation</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-credit">Copyright &copy; 2023 Yehong Hu &nbsp;·&nbsp; Student No. 301392896 &nbsp;·&nbsp; COMP-213 Web Interface Design &nbsp;·&nbsp; Fall 2023 &nbsp;·&nbsp; Assignment 2</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

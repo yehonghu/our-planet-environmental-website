@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizations — Our Planet</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+                </svg>
+                Our Planet
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="issues.html" class="nav-link">Issues</a></li>
+                <li><a href="organizations.html" class="nav-link active">Organizations</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+            </ul>
+            <button class="nav-cta" onclick="window.location.href='organizations.html'">Take Action</button>
+            <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="issues.html">Issues</a></li>
+            <li><a href="organizations.html">Organizations</a></li>
+            <li><a href="resources.html">Resources</a></li>
+        </ul>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <p class="page-hero-eyebrow">Global Partners</p>
+            <h1 class="page-hero-title">Organizations<br>making a difference</h1>
+            <p class="page-hero-subtitle">These leading institutions are at the forefront of environmental protection and climate action worldwide. Visit their websites to learn more and get involved.</p>
+        </div>
+    </section>
+
+    <!-- Organizations List -->
+    <section class="orgs-full-section">
+        <div class="container">
+
+            <!-- ASEZ -->
+            <div class="org-full-card" data-animate>
+                <div class="org-full-card-inner">
+                    <div>
+                        <div class="org-full-logo-wrap">
+                            <img src="images/asez.jpeg" alt="ASEZ" class="org-full-logo">
+                        </div>
+                    </div>
+                    <div class="org-full-info">
+                        <h3>ASEZ</h3>
+                        <span class="org-type">International Volunteer Organization</span>
+                        <p>ASEZ (Save the Earth from A to Z) is an international volunteer organization composed of university students from the World Mission Society Church of God. They conduct environmental campaigns and initiatives worldwide, focusing on practical action to address climate change and environmental degradation. Their grassroots approach mobilizes young people to take direct action in their communities.</p>
+                    </div>
+                    <div class="org-full-action">
+                        <a href="https://asez.org" target="_blank" class="btn btn-secondary">Visit Website ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IUCN -->
+            <div class="org-full-card" data-animate>
+                <div class="org-full-card-inner">
+                    <div>
+                        <div class="org-full-logo-wrap">
+                            <img src="images/iucn.jpeg" alt="IUCN" class="org-full-logo">
+                        </div>
+                    </div>
+                    <div class="org-full-info">
+                        <h3>IUCN — International Union for Conservation of Nature</h3>
+                        <span class="org-type">International Conservation Authority</span>
+                        <p>The International Union for Conservation of Nature (IUCN) is the world's largest and most diverse environmental network, harnessing the experience, resources and reach of its more than 1,400 Member organizations and the input of some 15,000 experts. IUCN is best known for its Red List of Threatened Species, the world's most comprehensive inventory of species' conservation status. Their work spans biodiversity conservation, natural resource management, and environmental law.</p>
+                    </div>
+                    <div class="org-full-action">
+                        <a href="https://www.iucn.org" target="_blank" class="btn btn-secondary">Visit Website ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Global Affairs Canada -->
+            <div class="org-full-card" data-animate>
+                <div class="org-full-card-inner">
+                    <div>
+                        <div class="org-full-logo-wrap">
+                            <img src="images/global-affairs.jpeg" alt="Global Affairs Canada" class="org-full-logo">
+                        </div>
+                    </div>
+                    <div class="org-full-info">
+                        <h3>Global Affairs Canada</h3>
+                        <span class="org-type">Government — International Climate Finance</span>
+                        <p>Global Affairs Canada manages Canada's diplomatic and consular relations, trade negotiations, and international development and humanitarian assistance. Canada is working to advance global environmental protection, with international assistance focusing on countries with a high impact on climate change. Canada is committed to supporting developing countries in their transition to a low-carbon, climate-resilient world through significant climate finance commitments.</p>
+                    </div>
+                    <div class="org-full-action">
+                        <a href="https://www.international.gc.ca/" target="_blank" class="btn btn-secondary">Visit Website ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NASA Climate -->
+            <div class="org-full-card" data-animate>
+                <div class="org-full-card-inner">
+                    <div>
+                        <div class="org-full-logo-wrap org-full-logo-wrap--dark">
+                            <img src="images/nasa-climate-logo-sm.png" alt="NASA Climate" class="org-full-logo" style="padding: 0; object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="org-full-info">
+                        <h3>NASA Climate — Vital Signs of the Planet</h3>
+                        <span class="org-type">Scientific Research Agency</span>
+                        <p>NASA is a global leader in climate research and Earth science. While NASA's role does not include setting climate policy or prescribing particular responses or solutions to climate change, its responsibilities do include providing the robust scientific data needed to understand climate change and evaluate strategies for mitigation and adaptation. Their Earth-observing satellites provide critical data on temperature, sea level, ice coverage, and atmospheric composition.</p>
+                    </div>
+                    <div class="org-full-action">
+                        <a href="https://climate.nasa.gov" target="_blank" class="btn btn-secondary">Visit Website ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- David Suzuki Foundation -->
+            <div class="org-full-card" data-animate>
+                <div class="org-full-card-inner">
+                    <div>
+                        <div class="org-full-logo-wrap">
+                            <img src="images/david-suzuki.png" alt="David Suzuki Foundation" class="org-full-logo">
+                        </div>
+                    </div>
+                    <div class="org-full-info">
+                        <h3>David Suzuki Foundation</h3>
+                        <span class="org-type">Canadian Environmental Organization</span>
+                        <p>The David Suzuki Foundation works through science and public education to protect the diversity of nature and our quality of life, now and for the future. Founded by renowned scientist and broadcaster David Suzuki, the organization focuses on climate solutions, biodiversity conservation, and sustainable communities. They work with government, businesses, and individuals to find solutions that allow humans to live in balance with the natural world.</p>
+                    </div>
+                    <div class="org-full-action">
+                        <a href="https://davidsuzuki.org" target="_blank" class="btn btn-secondary">Visit Website ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNEP -->
+            <div class="org-full-card" data-animate>
+                <div class="org-full-card-inner">
+                    <div>
+                        <div class="org-full-logo-wrap">
+                            <img src="images/unep.png" alt="UNEP" class="org-full-logo">
+                        </div>
+                    </div>
+                    <div class="org-full-info">
+                        <h3>UNEP — United Nations Environment Programme</h3>
+                        <span class="org-type">United Nations Agency</span>
+                        <p>The United Nations Environment Programme (UNEP) is the leading global environmental authority that sets the global environmental agenda, promotes the coherent implementation of the environmental dimension of sustainable development within the United Nations system, and serves as an authoritative advocate for the global environment. UNEP has shown that the problem of plastic pollution does not exist in isolation — the environmental, social, economic and health risks of plastics need to be assessed in conjunction with other environmental stressors.</p>
+                    </div>
+                    <div class="org-full-action">
+                        <a href="https://www.unep.org/" target="_blank" class="btn btn-secondary">Visit Website ↗</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-inner">
+                <h2>Ready to learn more?</h2>
+                <p>Explore the key environmental issues these organizations are working to address, and find resources to deepen your understanding.</p>
+                <div class="cta-actions">
+                    <a href="issues.html" class="btn btn-primary">Explore Issues</a>
+                    <a href="resources.html" class="btn btn-outline-white">View References</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">Our Planet</a>
+                    <p>A curated resource on environmental protection and climate change, created for COMP-213 Web Interface Design.</p>
+                </div>
+                <div class="footer-links-group">
+                    <h5>Explore</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="issues.html">Issues</a></li>
+                        <li><a href="organizations.html">Organizations</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h5>Organizations</h5>
+                    <ul>
+                        <li><a href="https://asez.org" target="_blank">ASEZ</a></li>
+                        <li><a href="https://www.iucn.org" target="_blank">IUCN</a></li>
+                        <li><a href="https://climate.nasa.gov" target="_blank">NASA Climate</a></li>
+                        <li><a href="https://www.unep.org/" target="_blank">UNEP</a></li>
+                        <li><a href="https://davidsuzuki.org" target="_blank">David Suzuki Foundation</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-credit">Copyright &copy; 2023 Yehong Hu &nbsp;·&nbsp; Student No. 301392896 &nbsp;·&nbsp; COMP-213 Web Interface Design &nbsp;·&nbsp; Fall 2023 &nbsp;·&nbsp; Assignment 2</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
