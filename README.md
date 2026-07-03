@@ -4,7 +4,9 @@ A modern, Apple-inspired multi-page website exploring environmental protection a
 
 ## Live Preview
 
-Open `index.html` in any modern browser to view the full website.
+**[👉 View Live Website](https://yehonghu.github.io/our-planet-environmental-website/)**
+
+Or open `index.html` in any modern browser to view the full website.
 
 ## Pages
 
