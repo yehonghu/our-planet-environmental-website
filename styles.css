@@ -234,18 +234,17 @@ button { font: inherit; }
 .org-chip { min-height: 160px; padding: 20px; background: var(--chalk); display: flex; flex-direction: column; align-items: start; justify-content: space-between; transition: background .3s var(--ease), transform .3s var(--ease); }
 .org-chip:hover { background: var(--lichen); transform: translateY(-6px); }
 .org-chip span:last-child { font: 500 10px var(--mono); letter-spacing: .06em; text-transform: uppercase; }
-.org-emblem { --emblem: var(--ocean); --emblem-soft: rgba(27,105,141,.18); position:relative; display:grid; width:58px; aspect-ratio:1; place-items:center; overflow:hidden; border:1px solid color-mix(in srgb, var(--emblem) 62%, var(--ink)); border-radius:43% 57% 51% 49% / 48% 42% 58% 52%; background:linear-gradient(135deg,var(--chalk),var(--emblem-soft)); color:var(--emblem); isolation:isolate; transition:transform .35s var(--ease), border-radius .35s var(--ease), background .35s var(--ease); }
-.org-emblem::before { content:''; position:absolute; z-index:-1; width:79%; aspect-ratio:1; border:1px solid currentColor; border-radius:50%; opacity:.56; transform:translate(25%,-28%); }
-.org-emblem::after { content:''; position:absolute; z-index:-1; inset:18%; border:1px solid currentColor; border-radius:47% 53% 42% 58%; opacity:.26; transform:rotate(24deg); }
-.org-emblem i { position:absolute; z-index:-1; width:160%; height:1px; background:currentColor; opacity:.35; transform:rotate(-36deg); }
-.org-emblem strong { font:600 13px/1 var(--mono); letter-spacing:-.08em; }
-.org-emblem--asez { --emblem:#1875b7; --emblem-soft:rgba(24,117,183,.14); }
-.org-emblem--iucn { --emblem:#172f73; --emblem-soft:rgba(23,47,115,.13); }
-.org-emblem--canada { --emblem:#a53d32; --emblem-soft:rgba(165,61,50,.12); }
-.org-emblem--nasa { --emblem:#0a4f9e; --emblem-soft:rgba(10,79,158,.13); }
-.org-emblem--suzuki { --emblem:#17645d; --emblem-soft:rgba(23,100,93,.13); }
-.org-emblem--unep { --emblem:#0784ae; --emblem-soft:rgba(7,132,174,.13); }
-.org-chip:hover .org-emblem, .organization-card:hover .org-emblem { transform:rotate(-8deg) scale(1.08); border-radius:56% 44% 47% 53% / 42% 58% 44% 56%; background:linear-gradient(135deg,var(--chalk),color-mix(in srgb,var(--emblem-soft) 45%,var(--lichen))); }
+.logo-frame { display:grid; width:76px; height:58px; place-items:center; overflow:hidden; padding:9px; border:1px solid rgba(11,29,28,.16); background:#fff; box-shadow:inset 0 0 0 1px rgba(244,241,232,.84); transition:transform .3s var(--ease), box-shadow .3s var(--ease); }
+.official-mark { display:block; width:100%; height:100%; max-width:100%; max-height:100%; object-fit:contain; }
+.official-mark--asez { max-height:100%; }
+.official-mark--iucn { max-height:85%; }
+.official-mark--canada { max-width:95%; max-height:78%; }
+.official-mark--suzuki { max-height:84%; }
+.official-mark--unep { max-height:100%; }
+.logo-frame--text { background:var(--ink); border-color:var(--ink); color:var(--chalk); box-shadow:none; }
+.nasa-reference { display:flex; flex-direction:column; align-items:center; gap:1px; font:700 17px/.82 var(--sans); letter-spacing:.035em; }
+.nasa-reference small { color:var(--lichen); font:500 7px/1 var(--mono); letter-spacing:.14em; text-transform:uppercase; }
+.org-chip:hover .logo-frame, .organization-card:hover .logo-frame { transform:translateY(-3px); box-shadow:0 8px 16px rgba(11,29,28,.13), inset 0 0 0 1px rgba(181,214,93,.65); }
 .center-action { margin-top: 35px; display: flex; justify-content: flex-end; }
 .text-arrow { color: var(--ink); border-bottom: 1px solid var(--ink); padding: 5px 0; font: 500 11px var(--mono); letter-spacing: .06em; text-transform: uppercase; }
 .text-arrow:hover { transform: translateX(4px); color: var(--moss); border-color: var(--moss); }
@@ -301,8 +300,9 @@ button { font: inherit; }
 .organization-card { display: grid; grid-template-columns: 150px minmax(0,1fr) auto; gap: 45px; align-items: center; padding: 36px 0; border-bottom: 1px solid var(--line); transition: padding .3s var(--ease), background .3s var(--ease); }
 .organization-card:hover { background: rgba(181,214,93,.16); padding-left: 20px; padding-right: 20px; }
 .org-logo { display:flex; width:120px; height:84px; align-items:center; justify-content:start; }
-.org-logo .org-emblem { width:78px; }
-.org-logo .org-emblem strong { font-size:17px; }
+.org-logo .logo-frame { width:112px; height:72px; padding:10px; }
+.org-logo .nasa-reference { font-size:20px; }
+.org-logo .nasa-reference small { font-size:8px; }
 .org-body .micro-label { color: var(--moss); margin-bottom: 11px; }
 .org-body h3 { margin:0; font: normal clamp(34px,4vw,55px)/.87 var(--serif); letter-spacing: -.045em; }
 .org-body p { max-width:620px; margin:12px 0 0; color:var(--ink-soft); font-size:14px; }
@@ -400,6 +400,9 @@ button { font: inherit; }
     .organization-card { grid-template-columns:84px 1fr; gap:17px; padding:28px 0; }
     .organization-card:hover { padding-left:12px; padding-right:12px; }
     .org-logo { width:84px; }
+    .org-logo .logo-frame { width:70px; height:58px; padding:8px; }
+    .org-logo .nasa-reference { font-size:15px; }
+    .org-logo .nasa-reference small { font-size:6px; }
     .org-go { display:none; }
     .org-body h3 { font-size:43px; }
     .source-list li { grid-template-columns:27px 1fr; }

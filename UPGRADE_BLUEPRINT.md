@@ -25,7 +25,7 @@ The site will be driven by a shared `atlas.js` interaction layer. A fixed vertic
 | --- | --- |
 | `index.html` | **Atlas entry**: a photographed landscape, a pointer-responsive planet mark, three evidence markers, and routes into the field guide. |
 | `issues.html` | **Pressure systems**: visual field plates for ocean pollution, climate, biodiversity, and justice, with readable fact panels and reference paths. |
-| `organizations.html` | **Response network**: a curated directory of active institutions, retaining the real outbound links while presenting them through a unified Living Atlas identifier system. |
+| `organizations.html` | **Response network**: a curated directory of active institutions, preserving real outbound links and displaying current official Logo assets inside a unified presentation frame. |
 | `resources.html` | **Research desk**: a clear source index that preserves credible references and removes legacy course/assignment framing. |
 
 ## Non-Negotiable Rules
@@ -34,7 +34,7 @@ Every public page must use English only; must use the same Living Atlas navigati
 
 ## Existing Asset Strategy
 
-The original mountain hero and forest image remain as authentic evidence-bearing media. Older downloaded organization logo files are replaced with a coherent Living Atlas badge system built with CSS and accessible HTML; full organization names and direct official links preserve recognition without embedding inconsistent legacy marks. New decorative graphics avoid empty artificial backdrops or visual effects that obscure the project material.
+The original mountain hero and forest image remain as authentic evidence-bearing media. Older downloaded organization logo files are replaced by current SVG assets collected from the official ASEZ, IUCN, Government of Canada, David Suzuki Foundation, and UNEP websites; the presentation frame standardizes whitespace without recolouring or redrawing marks. NASA’s Brand Center prohibits third-party logo use without permission, so its entry preserves the real organization name and direct official link without embedding the protected identifier. New decorative graphics avoid empty artificial backdrops or visual effects that obscure the project material.
 
 ## Validation Standard
 
