@@ -1,257 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Environmental Issues — Our Planet</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore the connected pressure systems of ocean pollution, climate change, biodiversity loss, and environmental justice.">
+    <title>Pressure Systems — Living Atlas</title>
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png">
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <!-- Navigation -->
-    <nav class="nav" id="mainNav">
+    <div class="atlas-progress" aria-hidden="true"></div>
+    <nav class="site-nav" aria-label="Primary navigation">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
-                </svg>
-                Our Planet
-            </a>
+            <a class="brand" href="index.html" aria-label="Living Atlas home"><span class="brand-mark" aria-hidden="true"></span>Our Planet <span aria-hidden="true">/</span> Atlas</a>
             <ul class="nav-links">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="issues.html" class="nav-link active">Issues</a></li>
-                <li><a href="organizations.html" class="nav-link">Organizations</a></li>
-                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="index.html">Atlas</a></li><li><a class="active" href="issues.html">Pressure systems</a></li><li><a href="organizations.html">Response network</a></li><li><a href="resources.html">Research desk</a></li>
             </ul>
-            <button class="nav-cta" onclick="window.location.href='organizations.html'">Take Action</button>
-            <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
+            <a class="nav-action" href="organizations.html">Find a response ↗</a>
+            <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
         </div>
     </nav>
+    <div class="mobile-drawer" aria-label="Mobile navigation"><a href="index.html">Atlas entry</a><a href="issues.html">Pressure systems</a><a href="organizations.html">Response network</a><a href="resources.html">Research desk</a></div>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="issues.html">Issues</a></li>
-            <li><a href="organizations.html">Organizations</a></li>
-            <li><a href="resources.html">Resources</a></li>
-        </ul>
-    </div>
-
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <p class="page-hero-eyebrow">Global Challenges</p>
-            <h1 class="page-hero-title">The state of our<br>world's environment</h1>
-            <p class="page-hero-subtitle">From plastic pollution to climate change, these are the defining environmental challenges of our generation.</p>
-        </div>
-    </section>
-
-    <!-- Issues Content -->
-    <section class="issues-section">
-        <div class="container">
-
-            <!-- Plastic Pollution -->
-            <div class="issue-block" id="plastic" data-animate>
-                <div class="issue-visual">
-                    <div class="issue-visual-bg" style="background: linear-gradient(135deg, #0a3d62 0%, #1e5f74 50%, #0d4f3c 100%); height: 100%;">
-                        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px;">
-                            <div style="width: 100px; height: 100px; border: 3px solid rgba(255,255,255,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
-                                <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.2">
-                                    <path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/>
-                                    <path d="M3 12h4m10 0h4M12 3v4m0 10v4"/>
-                                    <path d="M7.76 7.76l2.83 2.83m2.83 2.83 2.83 2.83M16.24 7.76l-2.83 2.83m-2.83 2.83-2.83 2.83"/>
-                                </svg>
-                            </div>
-                            <p style="color: rgba(255,255,255,0.6); font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; text-align: center;">Plastic Pollution</p>
-                            <p style="color: rgba(255,255,255,0.9); font-size: 36px; font-weight: 700; letter-spacing: -0.03em; margin-top: 8px;">8M tons/yr</p>
-                            <p style="color: rgba(255,255,255,0.5); font-size: 13px; text-align: center; margin-top: 8px;">enters our oceans annually</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="issue-content">
-                    <span class="issue-tag">Plastic Pollution</span>
-                    <h2>Oceans drowning in plastic</h2>
-                    <p>The theme of World Environment Day is "Solutions to Plastic Pollution." The theme calls for global action to end plastic pollution. Every day, the equivalent of 2,000 garbage trucks full of plastic is dumped into the world's oceans, rivers and lakes.</p>
-                    <p>Plastic pollution is a global problem that transcends national borders. The environmental, social, economic and health risks of plastics need to be assessed in conjunction with other environmental stressors such as climate change, ecosystem degradation and resource use.</p>
-                    <div class="issue-facts">
-                        <div class="issue-fact" data-animate>
-                            <span class="issue-fact-number">2,000</span>
-                            <span class="issue-fact-label">garbage trucks of plastic dumped daily</span>
-                        </div>
-                        <div class="issue-fact" data-animate>
-                            <span class="issue-fact-number">8M+</span>
-                            <span class="issue-fact-label">metric tons enter oceans each year</span>
-                        </div>
-                    </div>
-                </div>
+    <main>
+        <header class="page-hero">
+            <img src="images/hero-bg.png" alt="Mountain lake framed by dark peaks and weather" data-parallax>
+            <div class="content-wrap" data-reveal>
+                <p class="kicker">Living Atlas / Field notes</p>
+                <h1>Pressure<br>systems.</h1>
+                <p>Four connected observations about the forces reshaping our waters, climate, living systems, and ability to respond.</p>
+                <p class="hero-reference">Read with the sources in view · Research desk 01–04</p>
             </div>
+        </header>
 
-            <!-- Climate Change -->
-            <div class="issue-block reverse" id="climate" data-animate>
-                <div class="issue-visual">
-                    <div class="issue-visual-bg" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); height: 100%;">
-                        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px;">
-                            <div style="position: relative; width: 120px; height: 120px; margin-bottom: 24px;">
-                                <div style="position: absolute; inset: 0; border: 2px solid rgba(255,200,50,0.3); border-radius: 50%;"></div>
-                                <div style="position: absolute; inset: 15px; border: 2px solid rgba(255,150,50,0.4); border-radius: 50%;"></div>
-                                <div style="position: absolute; inset: 30px; background: radial-gradient(circle, #ff9500, #ff6b00); border-radius: 50%;"></div>
-                            </div>
-                            <p style="color: rgba(255,255,255,0.6); font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; text-align: center;">Global Warming</p>
-                            <p style="color: rgba(255,200,50,0.9); font-size: 36px; font-weight: 700; letter-spacing: -0.03em; margin-top: 8px;">+1.1°C</p>
-                            <p style="color: rgba(255,255,255,0.5); font-size: 13px; text-align: center; margin-top: 8px;">above pre-industrial levels</p>
-                        </div>
-                    </div>
+        <section class="chapters content-wrap" aria-label="Environmental pressure systems">
+            <article class="signal-chapter" id="ocean" data-reveal>
+                <div class="chapter-media"><img src="images/nasa-ocean-debris.jpg" alt="Plastic litter on a remote Hawaiian coast, used by NASA to describe ocean debris research"><span class="media-coordinate">Water / pollution signal</span></div>
+                <div class="chapter-copy">
+                    <p class="chapter-number">01 / Ocean debris</p>
+                    <h2>What reaches<br>the water stays<br>in the system.</h2>
+                    <p>Plastic moves from streets and shorelines through rivers and currents. The scale is planetary, but the most useful responses begin with preventing waste before it reaches a coast.</p>
+                    <div class="fact-pair"><div class="fact"><strong>2,000</strong><span>garbage-truck equivalents of plastic enter oceans, rivers, and lakes each day.</span></div><div class="fact"><strong>8M+</strong><span>tons of plastic are estimated to enter the ocean each year.</span></div></div>
+                    <a class="chapter-source" href="resources.html#plastic-source">Open plastic pollution sources ↗</a>
                 </div>
-                <div class="issue-content">
-                    <span class="issue-tag">Climate Change</span>
-                    <h2>A planet warming faster than ever</h2>
-                    <p>NASA is a global leader in climate research and Earth science. While NASA's role does not include setting climate policy or prescribing particular responses or solutions to climate change, its responsibilities do include providing the robust scientific data needed to understand climate change.</p>
-                    <p>The scientific consensus is clear: human activities — primarily the burning of fossil fuels — are driving unprecedented changes to Earth's climate system, with consequences that will last for centuries.</p>
-                    <div class="issue-facts">
-                        <div class="issue-fact" data-animate>
-                            <span class="issue-fact-number">1.5°C</span>
-                            <span class="issue-fact-label">critical warming threshold to stay below</span>
-                        </div>
-                        <div class="issue-fact" data-animate>
-                            <span class="issue-fact-number">3.6mm</span>
-                            <span class="issue-fact-label">average annual sea level rise</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </article>
 
-            <!-- Canada's Role -->
-            <div class="issue-block" id="canada" data-animate>
-                <div class="issue-visual">
-                    <div class="issue-visual-bg" style="background: linear-gradient(135deg, #8b0000 0%, #c0392b 50%, #e74c3c 100%); height: 100%;">
-                        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px;">
-                            <div style="font-size: 64px; margin-bottom: 16px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));">🍁</div>
-                            <p style="color: rgba(255,255,255,0.6); font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; text-align: center;">Canada's Commitment</p>
-                            <p style="color: rgba(255,255,255,0.9); font-size: 22px; font-weight: 600; letter-spacing: -0.02em; margin-top: 8px; text-align: center; line-height: 1.3;">Low-Carbon<br>Resilient Future</p>
-                        </div>
-                    </div>
+            <article class="signal-chapter" id="climate" data-reveal>
+                <div class="chapter-media"><img src="images/hero-bg.png" alt="Clouds gathering over a mountain lake"><span class="media-coordinate">Air / climate signal</span></div>
+                <div class="chapter-copy">
+                    <p class="chapter-number">02 / Climate evidence</p>
+                    <h2>The atmosphere<br>keeps a record.</h2>
+                    <p>Evidence for a warming climate can be read across the atmosphere, oceans, land, and ice. Long-running observations turn a changing landscape into a scientific record of a system under stress.</p>
+                    <div class="fact-pair"><div class="fact"><strong>1°C</strong><span>rise in average surface temperature since the late nineteenth century.</span></div><div class="fact"><strong>20cm</strong><span>approximate global sea-level rise recorded across the last century.</span></div></div>
+                    <a class="chapter-source" href="resources.html#climate-source">Open climate evidence sources ↗</a>
                 </div>
-                <div class="issue-content">
-                    <span class="issue-tag">Global Cooperation</span>
-                    <h2>Canada's role in global environmental protection</h2>
-                    <p>Canada is working to advance global environmental protection. Canada's international assistance focuses on countries with a high impact on climate change. Canada is committed to supporting developing countries in their transition to a low-carbon, climate-resilient world.</p>
-                    <p>Through Global Affairs Canada, the country channels significant climate finance to support adaptation and mitigation efforts in vulnerable nations, recognizing that climate change is a shared global challenge requiring coordinated international response.</p>
-                    <a href="https://www.international.gc.ca/" target="_blank" class="btn btn-outline" style="margin-top: 8px;">Learn about Canada's initiatives →</a>
-                </div>
-            </div>
+            </article>
 
-            <!-- Gender & Environment -->
-            <div class="issue-block reverse" id="gender" data-animate>
-                <div class="issue-visual">
-                    <div class="issue-visual-bg" style="background: linear-gradient(135deg, #2d1b69 0%, #5b2c8d 50%, #8e44ad 100%); height: 100%;">
-                        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px;">
-                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.2" style="margin-bottom: 20px;">
-                                <circle cx="12" cy="8" r="4"/>
-                                <path d="M6 20v-2a6 6 0 0 1 12 0v2"/>
-                                <path d="M18 8a6 6 0 0 1-12 0"/>
-                            </svg>
-                            <p style="color: rgba(255,255,255,0.6); font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; text-align: center;">Disproportionate Impact</p>
-                            <p style="color: rgba(255,255,255,0.9); font-size: 18px; font-weight: 600; letter-spacing: -0.01em; margin-top: 8px; text-align: center; line-height: 1.4;">Women & Girls<br>Bear the Burden</p>
-                        </div>
-                    </div>
+            <article class="signal-chapter" id="nature" data-reveal>
+                <div class="chapter-media"><img src="images/nature-forest.avif" alt="Forest landscape representing a living habitat"><span class="media-coordinate">Life / habitat signal</span></div>
+                <div class="chapter-copy">
+                    <p class="chapter-number">03 / Biodiversity</p>
+                    <h2>Life is not<br>a backdrop.</h2>
+                    <p>Forests, coasts, grasslands, and freshwater systems do more than look alive. They hold water, regulate climate, feed communities, and support a web of species that cannot be replaced once lost.</p>
+                    <div class="fact-pair"><div class="fact"><strong>1M</strong><span>animal and plant species are threatened with extinction, many within decades.</span></div><div class="fact"><strong>20%</strong><span>decline in average native-species abundance across many land habitats since 1900.</span></div></div>
+                    <a class="chapter-source" href="resources.html#nature-source">Open biodiversity sources ↗</a>
                 </div>
-                <div class="issue-content">
-                    <span class="issue-tag">Gender & Environment</span>
-                    <h2>Climate change is not gender-neutral</h2>
-                    <p>Climate change and environmental degradation disproportionately affect women and girls, who are more restricted in their access to productive resources, the gendered division of labour — including greater responsibility for accessing water, fuel and food — and face gender gaps in employment and education.</p>
-                    <p>Addressing these intersecting inequalities requires a gender-responsive approach to environmental policy that recognizes and addresses the structural barriers women face in adapting to climate impacts.</p>
-                    <div class="issue-facts">
-                        <div class="issue-fact" data-animate>
-                            <span class="issue-fact-number">80%</span>
-                            <span class="issue-fact-label">of climate displaced people are women</span>
-                        </div>
-                        <div class="issue-fact" data-animate>
-                            <span class="issue-fact-number">3x</span>
-                            <span class="issue-fact-label">more likely to die in climate disasters</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </article>
 
-            <!-- UNEP & Biodiversity -->
-            <div class="issue-block" id="biodiversity" data-animate>
-                <div class="issue-visual">
-                    <div class="issue-visual-bg" style="height: 100%; overflow: hidden; border-radius: var(--radius-xl);">
-                        <img src="images/nature-forest.avif" alt="Forest" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
-                        <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 60%);"></div>
-                        <div style="position: absolute; bottom: 32px; left: 32px; right: 32px;">
-                            <p style="color: rgba(255,255,255,0.7); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px;">Biodiversity Crisis</p>
-                            <p style="color: #ffffff; font-size: 28px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2;">1 million species<br>at risk of extinction</p>
-                        </div>
-                    </div>
+            <article class="signal-chapter" id="justice" data-reveal>
+                <div class="justice-field" aria-label="Abstract field graphic representing shared environmental futures"></div>
+                <div class="chapter-copy">
+                    <p class="chapter-number">04 / Environmental justice</p>
+                    <h2>The burden is<br>not shared<br>equally.</h2>
+                    <p>Environmental change is also a question of access, safety, and representation. A credible response needs to account for the communities closest to climate impacts and include their knowledge in decisions about land, water, and resilience.</p>
+                    <div class="fact-pair"><div class="fact"><strong>1/4</strong><span>of global land is traditionally owned, managed, used, or occupied by Indigenous Peoples.</span></div><div class="fact"><strong>35%</strong><span>of formally protected areas overlap with lands used or managed by Indigenous Peoples and local communities.</span></div></div>
+                    <a class="chapter-source" href="resources.html#nature-source">Open the global assessment source ↗</a>
                 </div>
-                <div class="issue-content">
-                    <span class="issue-tag">Biodiversity & UNEP</span>
-                    <h2>The interconnected web of life</h2>
-                    <p>The United Nations Environment Programme (UNEP) has shown that the problem of plastic pollution does not exist in isolation. The environmental, social, economic and health risks of plastics need to be assessed in conjunction with other environmental stressors such as climate change, ecosystem degradation and resource use.</p>
-                    <p>Biodiversity loss and climate change are deeply intertwined crises. Healthy ecosystems are our greatest natural allies in fighting climate change — they absorb carbon, regulate water cycles, and support the food systems that billions of people depend on.</p>
-                    <a href="https://www.unep.org/" target="_blank" class="btn btn-outline" style="margin-top: 8px;">Explore UNEP's work →</a>
-                </div>
-            </div>
+            </article>
+        </section>
 
-        </div>
-    </section>
+        <section class="atlas-cta" aria-labelledby="cta-title"><p class="kicker">Move from signal to response</p><h2 id="cta-title">Who is already<br>at work?</h2><p>Use the response network to discover institutions translating research, policy, and community action into change.</p><a class="button-outline" href="organizations.html">Open the response network <span aria-hidden="true">→</span></a></section>
+    </main>
 
-    <!-- CTA -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-inner">
-                <h2>Knowledge is the first step.</h2>
-                <p>Now that you understand the challenges, explore the organizations working tirelessly to address them.</p>
-                <div class="cta-actions">
-                    <a href="organizations.html" class="btn btn-primary">View Organizations</a>
-                    <a href="resources.html" class="btn btn-outline-white">See Resources</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <a href="index.html" class="footer-logo">Our Planet</a>
-                    <p>A curated resource on environmental protection and climate change, created for COMP-213 Web Interface Design.</p>
-                </div>
-                <div class="footer-links-group">
-                    <h5>Explore</h5>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="issues.html">Issues</a></li>
-                        <li><a href="organizations.html">Organizations</a></li>
-                        <li><a href="resources.html">Resources</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links-group">
-                    <h5>Organizations</h5>
-                    <ul>
-                        <li><a href="https://asez.org" target="_blank">ASEZ</a></li>
-                        <li><a href="https://www.iucn.org" target="_blank">IUCN</a></li>
-                        <li><a href="https://climate.nasa.gov" target="_blank">NASA Climate</a></li>
-                        <li><a href="https://www.unep.org/" target="_blank">UNEP</a></li>
-                        <li><a href="https://davidsuzuki.org" target="_blank">David Suzuki Foundation</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p class="footer-credit">Copyright &copy; 2023 Yehong Hu &nbsp;·&nbsp; Student No. 301392896 &nbsp;·&nbsp; COMP-213 Web Interface Design &nbsp;·&nbsp; Fall 2023 &nbsp;·&nbsp; Assignment 2</p>
-            </div>
-        </div>
-    </footer>
-
+    <footer class="site-footer"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Our Planet / Atlas</a><p>An independent environmental field guide connecting evidence, imagery, and organizations already building a more resilient future.</p></div><div class="footer-nav"><h4 class="footer-label">Explore</h4><a href="index.html">Atlas entry</a><a href="issues.html">Pressure systems</a><a href="organizations.html">Response network</a></div><div class="footer-nav"><h4 class="footer-label">Research</h4><a href="resources.html">Sources & credits</a><a href="https://www.unep.org/" target="_blank" rel="noreferrer">UNEP ↗</a><a href="https://science.nasa.gov/" target="_blank" rel="noreferrer">NASA Science ↗</a></div></div><div class="footer-bottom"><span>© 2026 Our Planet / Living Atlas</span><span>Conceived and built by Yehong Hu</span></div></footer>
     <script src="main.js"></script>
 </body>
 </html>

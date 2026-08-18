@@ -1,57 +1,42 @@
-# Our Planet — Environmental Protection & Climate Change
+# Our Planet / Living Atlas
 
-A modern, Apple-inspired multi-page website exploring environmental protection and climate change issues. Built as a portfolio project for COMP-213 Web Interface Design.
+**Living Atlas** is a photography-first environmental field guide that connects ocean pollution, climate evidence, biodiversity, environmental justice, and the organizations responding to these pressures. It is a standalone portfolio experience designed and built by **Yehong Hu**.
 
-## Live Preview
+## Live Site
 
-**[👉 View Live Website](https://yehonghu.github.io/our-planet-environmental-website/)**
+[View the public Living Atlas site](https://yehonghu.github.io/our-planet-environmental-website/)
 
-Or open `index.html` in any modern browser to view the full website.
+GitHub Pages publishes the repository root from the `main` branch. No installation, build step, or server is required.
 
-## Pages
+## Routes
 
-| Page | Description |
-|------|-------------|
-| `index.html` | Home — full-screen hero, stats, topic cards, organizations preview |
-| `issues.html` | Issues — in-depth coverage of 5 key environmental topics |
-| `organizations.html` | Organizations — profiles of 6 leading environmental institutions |
-| `resources.html` | Resources — information sources, image credits, course info |
+| Route | Role |
+| --- | --- |
+| `index.html` | **Atlas entry** — original mountain image hero, pointer-responsive planetary mark, evidence markers, photographed pressure-system plates, and the response-network preview. |
+| `issues.html` | **Pressure systems** — photographed notes on ocean debris, climate evidence, biodiversity, and environmental justice. |
+| `organizations.html` | **Response network** — original organization logo assets and direct links to six environmental institutions. |
+| `resources.html` | **Research desk** — authoritative information sources, image notes, and direct organization links. |
 
-## Design Highlights
+## Design System
 
-- **Apple-style UI** — frosted glass navigation, SF-inspired typography with Inter font, tight letter-spacing
-- **Scroll animations** — Intersection Observer-powered fade-in transitions
-- **Parallax hero** — full-screen background with smooth parallax scrolling effect
-- **3D card hover** — perspective tilt effect on feature cards
-- **Responsive** — fully mobile-friendly with hamburger menu
-- **Color system** — clean `#f5f5f7` background + deep forest green `#2d6a4f` accent
+Living Atlas replaces the previous card-based interface with a distinct contemporary field-guide language.
 
-## Topics Covered
+| System layer | Implementation |
+| --- | --- |
+| Photography | Original mountain, forest, and organization assets are the core visual evidence. A NASA/NOAA ocean-debris photograph is added only where a dedicated ocean-pollution image is needed. |
+| Visual language | Mineral-ink, chalk, ocean, canopy, lichen, and clay palette; topographic rules; coordinate labels; field plates; high-contrast editorial typography. |
+| Scroll behavior | A fixed atlas progress filament, image-plane parallax, staggered observation reveals, and responsive section transitions. |
+| Depth | Pointer-responsive planet mark and three-dimensional tilt on topic plates; all motion respects `prefers-reduced-motion`. |
+| Accessibility | Semantic page sections, visible navigation states, descriptive image alternative text, keyboard-ready controls, and normal document scrolling. |
 
-- Plastic Pollution — 2,000 garbage trucks of plastic dumped daily
-- Climate Change — global warming science and NASA data
-- Canada's Environmental Role — Global Affairs Canada initiatives
-- Gender & Environment — disproportionate impact on women and girls
-- Biodiversity & UNEP — interconnected environmental crises
+## Sources and Image Notes
 
-## Organizations Featured
+The research desk links to the United Nations, UNEP, NASA Science, IPBES, IUCN, and the featured organizations. The added ocean-debris image is associated with NASA’s article, [*How NASA Is Homing in From Space on Ocean Debris*](https://www.nasa.gov/earth/how-nasa-is-homing-in-from-space-on-ocean-debris/), where it is credited to NOAA. See [`resources.html`](resources.html) for the full source index.
 
-- [ASEZ](https://asez.org) — International volunteer organization
-- [IUCN](https://www.iucn.org) — World's largest conservation network
-- [Global Affairs Canada](https://www.international.gc.ca/) — Canada's climate finance
-- [NASA Climate](https://climate.nasa.gov) — Earth science and climate research
-- [David Suzuki Foundation](https://davidsuzuki.org) — Canadian environmental org
-- [UNEP](https://www.unep.org/) — United Nations Environment Programme
+## Technology
 
-## Tech Stack
+This is a dependency-free static site built with HTML5, CSS3, and vanilla JavaScript. Shared interactions live in `main.js`; the entire Living Atlas visual system lives in `styles.css`.
 
-- Pure HTML5, CSS3, Vanilla JavaScript — no frameworks, no dependencies
-- Google Fonts (Inter)
-- CSS custom properties for design tokens
-- Intersection Observer API for scroll animations
+## Contributor
 
----
-
-**Course:** COMP-213 Web Interface Design, Section 006  
-**Student:** Yehong Hu — 301392896  
-**Term:** Fall 2023 — Assignment 2 (Optimized)
+**Yehong Hu** is the sole contributor and copyright holder for this portfolio upgrade.

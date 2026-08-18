@@ -1,146 +1,104 @@
-// ============================================
-//  Our Planet — Main JavaScript
-// ============================================
+(() => {
+    const root = document.documentElement;
+    const body = document.body;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-document.addEventListener('DOMContentLoaded', () => {
+    const updateProgress = () => {
+        const maximum = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+        const progress = Math.min(window.scrollY / maximum, 1);
+        root.style.setProperty('--progress', progress.toFixed(4));
 
-    // --- Navigation scroll effect ---
-    const nav = document.getElementById('mainNav');
-    const handleNavScroll = () => {
-        if (window.scrollY > 20) {
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.remove('scrolled');
-        }
+        document.querySelectorAll('[data-parallax]').forEach((element) => {
+            const rect = element.getBoundingClientRect();
+            const viewportCenter = window.innerHeight / 2;
+            const offset = (rect.top + rect.height / 2 - viewportCenter) / window.innerHeight;
+            element.style.setProperty('--parallax-y', `${Math.max(-34, Math.min(34, offset * -22)).toFixed(1)}px`);
+        });
+
+        const nav = document.querySelector('.site-nav');
+        if (nav) nav.classList.toggle('is-scrolled', window.scrollY > 26);
     };
-    window.addEventListener('scroll', handleNavScroll, { passive: true });
 
-    // --- Mobile menu toggle ---
-    const mobileToggle = document.getElementById('mobileToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
+    const revealElements = document.querySelectorAll('[data-reveal]');
+    if (reduceMotion) {
+        revealElements.forEach((element) => element.classList.add('is-visible'));
+    } else if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, activeObserver) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                const delay = Number(entry.target.dataset.delay || 0);
+                window.setTimeout(() => entry.target.classList.add('is-visible'), delay);
+                activeObserver.unobserve(entry.target);
+            });
+        }, { threshold: 0.13, rootMargin: '0px 0px -42px 0px' });
+        revealElements.forEach((element) => observer.observe(element));
+    } else {
+        revealElements.forEach((element) => element.classList.add('is-visible'));
+    }
 
-    if (mobileToggle && mobileMenu) {
-        mobileToggle.addEventListener('click', () => {
-            const isOpen = mobileMenu.classList.toggle('open');
-            mobileToggle.setAttribute('aria-expanded', isOpen);
-            // Animate hamburger to X
-            const spans = mobileToggle.querySelectorAll('span');
-            if (isOpen) {
-                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-            } else {
-                spans[0].style.transform = '';
-                spans[1].style.opacity = '';
-                spans[2].style.transform = '';
-            }
+    const toggle = document.querySelector('.nav-toggle');
+    const drawer = document.querySelector('.mobile-drawer');
+    if (toggle && drawer) {
+        toggle.addEventListener('click', () => {
+            const open = drawer.classList.toggle('is-open');
+            toggle.classList.toggle('is-open', open);
+            toggle.setAttribute('aria-expanded', String(open));
         });
-
-        // Close mobile menu when clicking a link
-        mobileMenu.querySelectorAll('a').forEach(link => {
+        drawer.querySelectorAll('a').forEach((link) => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
-                const spans = mobileToggle.querySelectorAll('span');
-                spans[0].style.transform = '';
-                spans[1].style.opacity = '';
-                spans[2].style.transform = '';
+                drawer.classList.remove('is-open');
+                toggle.classList.remove('is-open');
+                toggle.setAttribute('aria-expanded', 'false');
             });
         });
     }
 
-    // --- Intersection Observer for scroll animations ---
-    const animatedElements = document.querySelectorAll('[data-animate]');
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', (event) => {
+            const target = document.querySelector(anchor.getAttribute('href'));
+            if (!target) return;
+            event.preventDefault();
+            const top = target.getBoundingClientRect().top + window.scrollY - 78;
+            window.scrollTo({ top, behavior: reduceMotion ? 'auto' : 'smooth' });
+        });
+    });
 
-    if (animatedElements.length > 0) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    // Stagger animation for sibling elements
-                    const siblings = entry.target.parentElement
-                        ? Array.from(entry.target.parentElement.children).filter(el => el.hasAttribute('data-animate'))
-                        : [];
-                    const siblingIndex = siblings.indexOf(entry.target);
-                    const delay = siblingIndex * 80;
+    if (!reduceMotion) {
+        const orb = document.querySelector('[data-orb]');
+        if (orb) {
+            const resetOrb = () => { orb.style.transform = ''; };
+            window.addEventListener('pointermove', (event) => {
+                if (event.pointerType === 'touch') return;
+                const rect = orb.getBoundingClientRect();
+                const cx = rect.left + rect.width / 2;
+                const cy = rect.top + rect.height / 2;
+                const dx = (event.clientX - cx) / Math.max(window.innerWidth, 1);
+                const dy = (event.clientY - cy) / Math.max(window.innerHeight, 1);
+                orb.style.transform = `rotateX(${(dy * -15).toFixed(2)}deg) rotateY(${(dx * 18).toFixed(2)}deg)`;
+            }, { passive: true });
+            window.addEventListener('blur', resetOrb);
+        }
 
-                    setTimeout(() => {
-                        entry.target.classList.add('animated');
-                    }, delay);
-
-                    observer.unobserve(entry.target);
-                }
+        document.querySelectorAll('[data-tilt]').forEach((card) => {
+            let frame;
+            const reset = () => { card.style.transform = ''; };
+            card.addEventListener('pointermove', (event) => {
+                if (event.pointerType === 'touch') return;
+                const rect = card.getBoundingClientRect();
+                const x = (event.clientX - rect.left) / rect.width - .5;
+                const y = (event.clientY - rect.top) / rect.height - .5;
+                cancelAnimationFrame(frame);
+                frame = requestAnimationFrame(() => {
+                    card.style.transform = `perspective(900px) rotateY(${(x * 5).toFixed(2)}deg) rotateX(${(-y * 5).toFixed(2)}deg) translateY(-5px)`;
+                });
             });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -40px 0px'
+            card.addEventListener('pointerleave', reset);
+            card.addEventListener('blur', reset, true);
         });
-
-        animatedElements.forEach(el => observer.observe(el));
     }
 
-    // --- Smooth scroll for anchor links ---
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', (e) => {
-            const targetId = anchor.getAttribute('href');
-            if (targetId === '#') return;
-            const target = document.querySelector(targetId);
-            if (target) {
-                e.preventDefault();
-                const navHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height'));
-                const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight - 24;
-                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-            }
-        });
-    });
-
-    // --- Hero parallax effect ---
-    const heroImg = document.querySelector('.hero-img');
-    if (heroImg) {
-        window.addEventListener('scroll', () => {
-            const scrolled = window.scrollY;
-            if (scrolled < window.innerHeight) {
-                heroImg.style.transform = `translateY(${scrolled * 0.3}px)`;
-            }
-        }, { passive: true });
-    }
-
-    // --- Stat counter animation ---
-    const statNumbers = document.querySelectorAll('.stat-number');
-    if (statNumbers.length > 0) {
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '0';
-                    setTimeout(() => {
-                        entry.target.style.transition = 'opacity 0.5s ease';
-                        entry.target.style.opacity = '1';
-                    }, 200);
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        statNumbers.forEach(el => statsObserver.observe(el));
-    }
-
-    // --- Feature card hover depth effect ---
-    document.querySelectorAll('.feature-card').forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = (e.clientX - rect.left) / rect.width - 0.5;
-            const y = (e.clientY - rect.top) / rect.height - 0.5;
-            card.style.transform = `scale(1.01) perspective(800px) rotateY(${x * 3}deg) rotateX(${-y * 3}deg)`;
-        });
-
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
-        });
-    });
-
-    // --- Page transition fade-in ---
-    document.body.style.opacity = '0';
-    document.body.style.transition = 'opacity 0.4s ease';
-    requestAnimationFrame(() => {
-        document.body.style.opacity = '1';
-    });
-
-});
+    body.classList.add('is-ready');
+    updateProgress();
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress, { passive: true });
+})();
