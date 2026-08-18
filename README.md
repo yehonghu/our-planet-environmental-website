@@ -14,7 +14,7 @@ GitHub Pages publishes the repository root from the `main` branch. No installati
 | --- | --- |
 | `index.html` | **Atlas entry** — original mountain image hero, pointer-responsive planetary mark, evidence markers, photographed pressure-system plates, and the response-network preview. |
 | `issues.html` | **Pressure systems** — photographed notes on ocean debris, climate evidence, biodiversity, and environmental justice. |
-| `organizations.html` | **Response network** — original organization logo assets and direct links to six environmental institutions. |
+| `organizations.html` | **Response network** — unified Living Atlas organization identifiers and direct links to six environmental institutions. |
 | `resources.html` | **Research desk** — authoritative information sources, image notes, and direct organization links. |
 
 ## Design System
@@ -23,9 +23,10 @@ Living Atlas replaces the previous card-based interface with a distinct contempo
 
 | System layer | Implementation |
 | --- | --- |
-| Photography | Original mountain, forest, and organization assets are the core visual evidence. A NASA/NOAA ocean-debris photograph is added only where a dedicated ocean-pollution image is needed. |
+| Photography | Original mountain and forest assets are the core visual evidence. A NASA/NOAA ocean-debris photograph is added only where a dedicated ocean-pollution image is needed. |
 | Visual language | Mineral-ink, chalk, ocean, canopy, lichen, and clay palette; topographic rules; coordinate labels; field plates; high-contrast editorial typography. |
 | Scroll behavior | A fixed atlas progress filament, image-plane parallax, staggered observation reveals, and responsive section transitions. |
+| Network identifiers | Outdated downloaded organization logo files are replaced with a unified geometric badge system; full organization names and direct official-site links remain visible. |
 | Depth | Pointer-responsive planet mark and three-dimensional tilt on topic plates; all motion respects `prefers-reduced-motion`. |
 | Accessibility | Semantic page sections, visible navigation states, descriptive image alternative text, keyboard-ready controls, and normal document scrolling. |
 
