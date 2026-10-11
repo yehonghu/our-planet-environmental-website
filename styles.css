@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Instrument+Serif:ital@0;1&display=swap');
-
 :root {
     --chalk: #f4f1e8;
     --paper: #e9e3d7;
@@ -30,12 +28,33 @@ body {
     color: var(--ink);
     font-family: var(--sans);
     line-height: 1.55;
-    opacity: 1;
 }
 ::selection { color: var(--chalk); background: var(--moss); }
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 button { font: inherit; }
+[id] { scroll-margin-top: 84px; }
+
+.skip-link {
+    position: absolute;
+    z-index: 200;
+    left: 16px;
+    top: -70px;
+    padding: 10px 16px;
+    background: var(--ink);
+    color: var(--chalk);
+    font: 500 11px var(--mono);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: top .2s var(--ease);
+}
+.skip-link:focus-visible { top: 14px; outline: 2px solid var(--lichen); outline-offset: 2px; }
+a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--moss);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
 
 .atlas-progress {
     position: fixed;
@@ -154,7 +173,7 @@ button { font: inherit; }
 .hero-shade { z-index: -1; background: linear-gradient(90deg, rgba(5,17,17,.76) 0%, rgba(5,17,17,.28) 52%, rgba(5,17,17,.55) 100%), linear-gradient(0deg, rgba(5,17,17,.85), transparent 50%); }
 .hero-grid { position: absolute; z-index: -1; inset: 0; opacity: .32; background-image: linear-gradient(rgba(244,241,232,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(244,241,232,.12) 1px, transparent 1px); background-size: 64px 64px; mask-image: linear-gradient(to bottom, transparent, black 18%, black 80%, transparent); }
 .hero-content { grid-column: 2; width: min(100%, 1070px); padding: 150px 0 84px; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(230px, .55fr); gap: 80px; align-items: end; }
-.kicker, .chapter-number, .micro-label, .detail-label, .footer-label, .button-label {
+.kicker, .chapter-number, .micro-label, .footer-label {
     margin: 0;
     font-family: var(--mono);
     font-size: 10px;
@@ -340,6 +359,28 @@ button { font: inherit; }
 [data-reveal='left'] { transform:translate3d(-34px, 0, 0); }
 [data-reveal='right'] { transform:translate3d(34px, 0, 0); }
 [data-reveal='left'].is-visible, [data-reveal='right'].is-visible { transform:translate3d(0,0,0); }
+
+/* ---- Delight layer: motion accents (all cheap transform/opacity work) ---- */
+.evidence-value { display: inline-block; transition: transform .35s var(--ease); }
+.evidence-cell:hover .evidence-value { transform: translateY(-5px); }
+
+.org-river.is-visible .org-chip { animation: chip-rise .7s var(--ease) both; }
+.org-river.is-visible .org-chip:nth-child(2) { animation-delay: .07s; }
+.org-river.is-visible .org-chip:nth-child(3) { animation-delay: .14s; }
+.org-river.is-visible .org-chip:nth-child(4) { animation-delay: .21s; }
+.org-river.is-visible .org-chip:nth-child(5) { animation-delay: .28s; }
+.org-river.is-visible .org-chip:nth-child(6) { animation-delay: .35s; }
+@keyframes chip-rise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+
+.atlas-cta::before { animation: ring-breathe 9s var(--ease) infinite; }
+.atlas-cta::after { animation: ring-breathe 12s var(--ease) infinite reverse; }
+@keyframes ring-breathe { 50% { transform: translate(-50%,-50%) scale(1.035); } }
+
+.signal-link { transition: gap .3s var(--ease); }
+.signal-plate:hover .signal-link { gap: 13px; }
+.organization-card { transition: padding .3s var(--ease), background .3s var(--ease), transform .3s var(--ease); }
+.organization-card:hover { transform: translateX(6px); }
+.source-list a { transition: color .2s var(--ease), text-decoration-color .2s var(--ease); }
 
 @media (max-width: 960px) {
     .nav-links, .nav-action { display:none; }

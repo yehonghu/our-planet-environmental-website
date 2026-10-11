@@ -1,12 +1,25 @@
 # Our Planet / Living Atlas
 
+[![CI](https://github.com/yehonghu/our-planet-environmental-website/actions/workflows/ci.yml/badge.svg)](https://github.com/yehonghu/our-planet-environmental-website/actions/workflows/ci.yml)
+[![Last commit](https://img.shields.io/github/last-commit/yehonghu/our-planet-environmental-website)](https://github.com/yehonghu/our-planet-environmental-website/commits/main)
+
 **Living Atlas** is a photography-first environmental field guide that connects ocean pollution, climate evidence, biodiversity, environmental justice, and the organizations responding to these pressures. It is a standalone portfolio experience designed and built by **Yehong Hu**.
 
-## Live Site
+🌍 **Live demo:** https://yehonghu.github.io/our-planet-environmental-website/
 
-[View the public Living Atlas site](https://yehonghu.github.io/our-planet-environmental-website/)
+## Run locally
 
-GitHub Pages publishes the repository root from the `main` branch. No installation, build step, or server is required.
+No installation or build step is required — this is a dependency-free static site. Serve the repository root with any static server:
+
+```bash
+npx serve .
+# or
+python3 -m http.server 8000
+```
+
+Then open http://localhost:3000 (`serve`) or http://localhost:8000 (Python).
+
+GitHub Pages publishes the repository root from the `main` branch.
 
 ## Routes
 

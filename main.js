@@ -36,6 +36,35 @@
         revealElements.forEach((element) => element.classList.add('is-visible'));
     }
 
+    const animateCount = (element) => {
+        const match = element.textContent.trim().match(/^([\d,]+(?:\.\d+)?)(.*)$/);
+        if (!match) return;
+        const target = parseFloat(match[1].replace(/,/g, ''));
+        const suffix = match[2];
+        if (!(target > 9)) return;
+        const duration = 1400;
+        const start = performance.now();
+        const tick = (now) => {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            element.textContent = Math.round(target * eased).toLocaleString('en-US') + suffix;
+            if (progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+    };
+
+    if (!reduceMotion && 'IntersectionObserver' in window) {
+        const counters = document.querySelectorAll('.evidence-value');
+        const counterObserver = new IntersectionObserver((entries, activeObserver) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                animateCount(entry.target);
+                activeObserver.unobserve(entry.target);
+            });
+        }, { threshold: 0.6 });
+        counters.forEach((counter) => counterObserver.observe(counter));
+    }
+
     const toggle = document.querySelector('.nav-toggle');
     const drawer = document.querySelector('.mobile-drawer');
     if (toggle && drawer) {
